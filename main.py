@@ -83,12 +83,12 @@ def sharpen(image) :
   return output
 
 def smooth(image) :
- image = np.zeros(image.shape);
- kernel = (1/9)np.array([[1, 1, 1],
+    image = np.zeros(image.shape);
+    kernel = (1/9) * np.array([[1, 1, 1],
                    [1, 1, 1],
                    [1, 1, 1]])
-  output = konvolusi(image, kernel)
-  return output
+    output = konvolusi(image, kernel)
+    return output
 
 def getFeatures(image):
     return np.hstack([fd_histogram(image), fd_haralick(image), fd_hu_moments(image)])
