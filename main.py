@@ -90,6 +90,15 @@ def smooth(image) :
     output = konvolusi(image, kernel)
     return output
 
+def sgaussian_blur(image) :
+  output = np.zeros(image.shape);
+  kernel = np.array([[1, 2, 1],
+                   [2, 4, 2],
+                   [1, 2, 1]])/16
+
+  output = konvolusi(image, kernel)
+  return output
+
 def getFeatures(image):
     return np.hstack([fd_histogram(image), fd_haralick(image), fd_hu_moments(image)])
 
